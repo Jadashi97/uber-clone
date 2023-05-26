@@ -1,5 +1,6 @@
-import "../styles/global.css";
+import "../styles/globals.css";
 import "tailwindcss/tailwind.css";
+import "mapbox-gl/dist/mapbox-gl.css";
 
 
 function myApp({Component, pageProps}){
