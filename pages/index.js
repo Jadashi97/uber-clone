@@ -2,6 +2,7 @@ import styles from "../styles/globals.css";
 import Map from "./components/Map";
 import tw from "tailwind-styled-components";
 import mapboxgl from "!mapbox-gl";
+import Link from "next/link";
 
 
 export default function Home(){
@@ -19,10 +20,12 @@ export default function Home(){
                     </Profile>
                 </Header>
                 <ActionButtons>
-                    <ActionButton>
-                        <ActionButtonImg src="https://i.ibb.co/cyvcpfF/uberx.png"/>
-                        Ride
-                    </ActionButton>
+                    <Link href={"/Search"}>
+                        <ActionButton>
+                            <ActionButtonImg src="https://i.ibb.co/cyvcpfF/uberx.png"/>
+                            Ride
+                        </ActionButton>
+                    </Link>
                     <ActionButton>
                         <ActionButtonImg src="https://i.ibb.co/n776JLm/bike.png"/>
                         Wheels
