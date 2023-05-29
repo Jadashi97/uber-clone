@@ -18,6 +18,23 @@ export default function Home(){
                         <UserImage src="https://avatars.githubusercontent.com/u/95899616?s=400&u=d070ae1f6c50171b4c3c258a6070327d77218ca4&v=4" />
                     </Profile>
                 </Header>
+                <ActionButtons>
+                    <ActionButton>
+                        <ActionButtonImg src="https://i.ibb.co/cyvcpfF/uberx.png"/>
+                        Ride
+                    </ActionButton>
+                    <ActionButton>
+                        <ActionButtonImg src="https://i.ibb.co/n776JLm/bike.png"/>
+                        Wheels
+                    </ActionButton>
+                    <ActionButton>
+                        <ActionButtonImg src="https://i.ibb.co/5RjchBg/uberschedule.png"/>
+                        Reserve
+                    </ActionButton>
+                </ActionButtons>
+                <InputButton>
+                    Where to?
+                </InputButton>
                 {/* Buttons */}
                 {/* InputButton */}
                 
@@ -51,11 +68,24 @@ const Profile = tw.div`
 `;
 
 const Name = tw.div`
-    mr-4 w-20 text-sm
+    mr-4 w-20 text-xl
 `;
 
-
-
 const UserImage = tw.img`
-    h-16 w-16 rounded-full border border-gray-200 p-px
+    h-16 w-16 rounded-full border border-gray-200 p-px transform hover:scale-105
+`;
+
+const ActionButtons = tw.div`
+    flex mt-8
+`
+const ActionButton = tw.div`
+    flex flex-1 bg-gray-200 m-1 h-32 items-center flex-col justify-center rounded-lg transform hover:scale-105 transition text-xl
+`;
+
+const ActionButtonImg = tw.img`
+    h-3/5
+`;
+
+const InputButton = tw.div`
+    mt-8 flex bg-gray-200 h-20 text-2xl p-4 items-center
 `;
