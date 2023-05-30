@@ -1,12 +1,15 @@
 import React from 'react';
 import tw from 'tailwind-styled-components';
+import Link from 'next/link';
 
 
 const Search = () => {
   return (
     <Wrapper>
         <ButtonContainer>
-            <BackButton src='https://img.icons8.com/ios-filled/50/000000/left.png'/>
+            <Link href={"/"}>
+                <BackButton src='https://img.icons8.com/ios-filled/50/000000/left.png'/>
+            </Link>
         </ButtonContainer>
         <InputContainer>
             <FromToIcons>
@@ -20,6 +23,15 @@ const Search = () => {
             </InputBoxes>
             <PlusIcon src='https://img.icons8.com/ios/50/000000/plus-math.png'/>
         </InputContainer>
+        <SavedPlaces>
+            <StarIcon src="https://img.icons8.com/ios-filled/50/ffffff/star--v1.png"/>
+            Saved Places
+        </SavedPlaces>
+        <ComfirmButtonContainer>
+            <ComfirmButton>
+                Confirm Location
+            </ComfirmButton>
+        </ComfirmButtonContainer>
         {/* Button container */}
         {/* input container */}
         {/* saved places */}
@@ -43,23 +55,23 @@ const BackButton = tw.img`
 `;
 
 const FromToIcons = tw.div`
-    w-10 flex flex-col
+    w-10 flex flex-col mr-2 items-center
 `;
 
 const InputContainer = tw.div`
-    bg-white flex
+    bg-white flex items-center px-4 
 `;
 
 const Circle = tw.img`
-
+    h-2.5
 `;
 
 const VerticalLine = tw.img`
-
+    h-10
 `;
 
 const Square = tw.img`
-
+    h-3
 `;
 
 const InputBoxes = tw.div`
@@ -71,5 +83,21 @@ const Input = tw.input`
 `;
 
 const PlusIcon = tw.img`
+    h-10 w-10 bg-gray-200 rounded-full ml-3
+`;
 
-`
+const SavedPlaces = tw.div`
+    flex items-center bg-white px-4 py-2
+`;
+
+const StarIcon = tw.img`
+    bg-gray-400 w-10 h-10 p-2 rounded-full mr-2
+`;
+
+const ComfirmButton = tw.button`
+    bg-black text-white  p-2 w-full m-4 color-white
+`;
+
+const ComfirmButtonContainer = tw.div`
+    flex flex-1 bg-white
+`;

@@ -26,14 +26,18 @@ export default function Home(){
                             Ride
                         </ActionButton>
                     </Link>
-                    <ActionButton>
-                        <ActionButtonImg src="https://i.ibb.co/n776JLm/bike.png"/>
-                        Wheels
-                    </ActionButton>
-                    <ActionButton>
-                        <ActionButtonImg src="https://i.ibb.co/5RjchBg/uberschedule.png"/>
-                        Reserve
-                    </ActionButton>
+                    <Link href={"/Search"}>
+                        <ActionButton>
+                            <ActionButtonImg src="https://i.ibb.co/n776JLm/bike.png"/>
+                            Wheels
+                        </ActionButton>
+                    </Link>
+                    <Link href={"/Search"}>
+                        <ActionButton>
+                            <ActionButtonImg src="https://i.ibb.co/5RjchBg/uberschedule.png"/>
+                            Reserve
+                        </ActionButton>
+                    </Link>
                 </ActionButtons>
                 <InputButton>
                     Where to?
@@ -79,7 +83,7 @@ const UserImage = tw.img`
 `;
 
 const ActionButtons = tw.div`
-    flex mt-8
+    flex flex-1 mt-8 justify-center justify-between items-center px-4
 `
 const ActionButton = tw.div`
     flex flex-1 bg-gray-200 m-1 h-32 items-center flex-col justify-center rounded-lg transform hover:scale-105 transition text-xl
