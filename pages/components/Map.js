@@ -10,11 +10,22 @@ function Map() {
     useEffect(()=>{
         const map = new mapboxgl.Map({
             container: 'map', // container ID
-            style: 'mapbox://styles/mapbox/streets-v12', // style URL
+            style: 'mapbox://styles/drakosi/ckvcwq3rwdw4314o3i2ho8tph', // style URL
+            // style: 'mapbox://styles/mapbox/streets-v12', // style URL
             center: [31.571250, 4.8670], // starting position [lng, lat]
             zoom: 9 // starting zoom
         });
-    })
+
+        addToMap(map);
+
+    });
+
+    const addToMap = (map)=> {
+        // Create a new marker.
+        const marker = new mapboxgl.Marker()
+        .setLngLat([31.571250, 4.8670])
+        .addTo(map);
+    }
 
     return (
         <Wrapper id="map"></Wrapper>

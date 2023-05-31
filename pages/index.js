@@ -13,7 +13,7 @@ export default function Home(){
             <ActionItems>
                 {/* header */}
                 <Header>
-                    <UberLogo src="https://www.citypng.com/public/uploads/preview/uber-text-word-white-logo-png-116636032551bv8psou6e.png"/>
+                    <UberLogo src="https://i.ibb.co/84stgjq/uber-technologies-new-20218114.jpg"/>
                     <Profile>
                         <Name>Lokose Dan</Name>
                         <UserImage src="https://avatars.githubusercontent.com/u/95899616?s=400&u=d070ae1f6c50171b4c3c258a6070327d77218ca4&v=4" />
@@ -75,18 +75,18 @@ const Profile = tw.div`
 `;
 
 const Name = tw.div`
-    mr-4 w-20 text-xl
+    mr-4 w-20 text-sm
 `;
 
 const UserImage = tw.img`
-    h-16 w-16 rounded-full border border-gray-200 p-px transform hover:scale-105
+    h-12 w-12 rounded-full border border-gray-200 p-px transform hover:scale-105
 `;
 
 const ActionButtons = tw.div`
-    flex flex-1 mt-8 justify-center justify-between items-center px-4
+    flex items-center  justify-evenly
 `
 const ActionButton = tw.div`
-    flex flex-1 bg-gray-200 m-1 h-32 items-center flex-col justify-center rounded-lg transform hover:scale-105 transition text-xl
+    flex  bg-gray-200 flex-1 m-1 h-32    flex-col justify-center rounded-lg transform hover:scale-105 transition text-xl
 `;
 
 const ActionButtonImg = tw.img`
@@ -96,3 +96,4 @@ const ActionButtonImg = tw.img`
 const InputButton = tw.div`
     mt-8 flex bg-gray-200 h-20 text-2xl p-4 items-center
 `;
+

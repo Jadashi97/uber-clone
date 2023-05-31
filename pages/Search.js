@@ -95,7 +95,7 @@ const StarIcon = tw.img`
 `;
 
 const ComfirmButton = tw.button`
-    bg-black text-white  p-2 w-full m-4 color-white
+    bg-black text-white  p-2 w-full m-4 color-white rounded-full
 `;
 
 const ComfirmButtonContainer = tw.div`
