@@ -32,10 +32,6 @@ const Search = () => {
                 Confirm Location
             </ComfirmButton>
         </ComfirmButtonContainer>
-        {/* Button container */}
-        {/* input container */}
-        {/* saved places */}
-        {/* confirm button */}
     </Wrapper>
   )
 }

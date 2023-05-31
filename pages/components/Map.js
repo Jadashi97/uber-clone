@@ -3,7 +3,8 @@ import React, {useEffect} from 'react';
 import tw from "tailwind-styled-components";
 import mapboxgl from "!mapbox-gl";
 
-function Map() {
+function Map(props) {
+    console.log(props);
     // use map box to work on the map section
     mapboxgl.accessToken = 'pk.eyJ1IjoiamFkYXNoaTk3IiwiYSI6ImNsaTRvODhidzE5dWQzZm8wcmFlc2VvdzkifQ.jfniAC-1WpN--O_DqmP8lA';
 
