@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Map from "./components/Map";
 import tw from 'tailwind-styled-components';
-import mapboxgl from 'mapbox-gl';
+import mapboxgl from '!mapbox-gl';
 
 const Confirm = () => {
 

@@ -1,10 +1,8 @@
 import React, {useEffect} from 'react';
-
 import tw from "tailwind-styled-components";
 import mapboxgl from "!mapbox-gl";
 
 function Map(props) {
-    console.log(props);
     // use map box to work on the map section
     mapboxgl.accessToken = 'pk.eyJ1IjoiamFkYXNoaTk3IiwiYSI6ImNsaTRvODhidzE5dWQzZm8wcmFlc2VvdzkifQ.jfniAC-1WpN--O_DqmP8lA';
 
@@ -17,16 +15,25 @@ function Map(props) {
             zoom: 9 // starting zoom
         });
 
-        addToMap(map);
+        if(props.pickupCoordinates){
+            addToMap(map, props.pickupCoordinates);
+        }
 
-    });
+        if(props.dropOffCoordinates){
+            addToMap(map, props.dropOffCoordinates)
+        }
 
-    const addToMap = (map)=> {
+    }, [props.pickupCoordinates, props.dropOffCoordinates]);
+
+    const addToMap = (map, coordinates)=> {
         // Create a new marker.
-        const marker = new mapboxgl.Marker()
-        .setLngLat([31.571250, 4.8670])
+        const marker1 = new mapboxgl.Marker()
+        .setLngLat(coordinates)
         .addTo(map);
     }
+
+
+
 
     return (
         <Wrapper id="map"></Wrapper>
