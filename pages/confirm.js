@@ -2,14 +2,18 @@ import { useEffect, useState } from 'react';
 import Map from "./components/Map";
 import tw from 'tailwind-styled-components';
 import mapboxgl from '!mapbox-gl';
+import { useRouter } from 'next/router';
 
-const Confirm = () => {
+const Confirm = () =>  {
+    const router  = useRouter();
+
+    const {pickUp, dropOff} = router.query;
 
     const [pickupCoordinates, setpickUpCoordinates] = useState();
     const [dropOffCoordinates, setDropOffCoordinates] = useState();
 
-    async function getPickUpCoordinates(){
-        const pickUp = "juba";
+    async function getPickUpCoordinates(pickUp){
+        // const pickUp = "Munuki Central";
         const response = await fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${pickUp}.json?`+ 
             new URLSearchParams({
                 access_token: "pk.eyJ1IjoiamFkYXNoaTk3IiwiYSI6ImNsaTRvODhidzE5dWQzZm8wcmFlc2VvdzkifQ.jfniAC-1WpN--O_DqmP8lA",
@@ -22,8 +26,8 @@ const Confirm = () => {
     }
 
 
-    async function getDropOffCoordinates(){
-        const dropOff = "rajaf";
+    async function getDropOffCoordinates(dropOff){
+        // const dropOff = "Gudele";
 
         const response = await fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${dropOff}.json?` + 
             new URLSearchParams({
@@ -39,9 +43,9 @@ const Confirm = () => {
     }
 
     useEffect(() => {
-     getPickUpCoordinates();
-     getDropOffCoordinates();
-    }, [])
+     getPickUpCoordinates(pickUp);
+     getDropOffCoordinates(dropOff);
+    }, [pickUp, dropOff])
 
     return (
         <Wrapper>

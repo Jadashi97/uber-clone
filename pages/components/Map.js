@@ -23,6 +23,17 @@ function Map(props) {
             addToMap(map, props.dropOffCoordinates)
         }
 
+        // zooms the map so the new visible area of the map fits within the specified geographical bounds.
+        if(props.pickupCoordinates && props.dropOffCoordinates){
+            map.fitBounds([
+                props.pickupCoordinates,
+                props.dropOffCoordinates
+                ],{
+                    padding: 60,
+                }                
+                );
+        }
+
     }, [props.pickupCoordinates, props.dropOffCoordinates]);
 
     const addToMap = (map, coordinates)=> {
