@@ -55,9 +55,24 @@ const Confirm = () =>  {
                 dropOffCoordinates={dropOffCoordinates}
             />
             <RideContainer>
-                Rides
-                {pickupCoordinates}
-                {dropOffCoordinates}
+                <RideSelector>
+                    <SelectedRide>
+                        UberX
+                    </SelectedRide>
+                    <SelectedRide>
+                        UberXL
+                    </SelectedRide>
+                    <SelectedRide>
+                        Black
+                    </SelectedRide>
+                    <SelectedRide>
+                        Comfort
+                    </SelectedRide>
+
+                </RideSelector>
+                <ConfirmButtonContainer>
+                    Comfirm UberX
+                </ConfirmButtonContainer>
             </RideContainer>
         
         </Wrapper>
@@ -73,4 +88,16 @@ const Wrapper = tw.div`
 
 const RideContainer = tw.div`
     flex-1 p-4
+`;
+
+const RideSelector = tw.div`
+    flex-col flex-1 bg-gray-200 
+`;
+
+const SelectedRide= tw.div`
+    p-10
+`;
+
+const ConfirmButtonContainer = tw.div`
+    items-center flex p-4 bg-black text-white justify-center rounded-xl
 `;
