@@ -3,6 +3,7 @@ import Map from "./components/Map";
 import tw from 'tailwind-styled-components';
 import mapboxgl from '!mapbox-gl';
 import { useRouter } from 'next/router';
+import RideSelector from './components/RideSelector';
 
 const Confirm = () =>  {
     const router  = useRouter();
@@ -55,23 +56,11 @@ const Confirm = () =>  {
                 dropOffCoordinates={dropOffCoordinates}
             />
             <RideContainer>
-                <RideSelector>
-                    <SelectedRide>
-                        UberX
-                    </SelectedRide>
-                    <SelectedRide>
-                        UberXL
-                    </SelectedRide>
-                    <SelectedRide>
-                        Black
-                    </SelectedRide>
-                    <SelectedRide>
-                        Comfort
-                    </SelectedRide>
-
-                </RideSelector>
+                <RideSelector/>
                 <ConfirmButtonContainer>
-                    Comfirm UberX
+                    <ConfirmButton>
+                        Comfirm UberX
+                    </ConfirmButton>
                 </ConfirmButtonContainer>
             </RideContainer>
         
@@ -87,17 +76,13 @@ const Wrapper = tw.div`
 `;
 
 const RideContainer = tw.div`
-    flex-1 p-4
-`;
-
-const RideSelector = tw.div`
-    flex-col flex-1 bg-gray-200 
-`;
-
-const SelectedRide= tw.div`
-    p-10
+    flex-1 flex flex-col
 `;
 
 const ConfirmButtonContainer = tw.div`
-    items-center flex p-4 bg-black text-white justify-center rounded-xl
+    border-t-2
+`;
+
+const ConfirmButton = tw.div`
+    bg-black text-white text-center m-4 py-4 text-xl
 `;
