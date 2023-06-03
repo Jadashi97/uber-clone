@@ -10,7 +10,6 @@ function Map(props) {
         const map = new mapboxgl.Map({
             container: 'map', // container ID
             style: 'mapbox://styles/drakosi/ckvcwq3rwdw4314o3i2ho8tph', // style URL
-            // style: 'mapbox://styles/mapbox/streets-v12', // style URL
             center: [31.571250, 4.8670], // starting position [lng, lat]
             zoom: 9 // starting zoom
         });

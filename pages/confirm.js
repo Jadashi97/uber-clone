@@ -4,6 +4,8 @@ import tw from 'tailwind-styled-components';
 import mapboxgl from '!mapbox-gl';
 import { useRouter } from 'next/router';
 import RideSelector from './components/RideSelector';
+import Link from 'next/link';
+
 
 const Confirm = () =>  {
     const router  = useRouter();
@@ -50,6 +52,11 @@ const Confirm = () =>  {
 
     return (
         <Wrapper>
+            <ButtonContainer>
+                <Link href={"/Search"}>
+                    <BackButton src='https://img.icons8.com/ios-filled/50/000000/left.png'/>
+                </Link>
+                </ButtonContainer>
             <Map
                 // pass it in as props
                 pickupCoordinates={pickupCoordinates}
@@ -70,6 +77,13 @@ const Confirm = () =>  {
 
 export default Confirm;
 
+const ButtonContainer = tw.div`
+    bg-white px-4
+`;
+
+const BackButton = tw.img`
+    h-12
+`;
 
 const Wrapper = tw.div`
     flex flex-col h-screen
