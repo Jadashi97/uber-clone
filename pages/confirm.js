@@ -56,7 +56,7 @@ const Confirm = () =>  {
                 <Link href={"/Search"}>
                     <BackButton src='https://img.icons8.com/ios-filled/50/000000/left.png'/>
                 </Link>
-                </ButtonContainer>
+            </ButtonContainer>
             <Map
                 // pass it in as props
                 pickupCoordinates={pickupCoordinates}
@@ -78,11 +78,11 @@ const Confirm = () =>  {
 export default Confirm;
 
 const ButtonContainer = tw.div`
-    bg-white px-4
+    rounded-full absolute top-4 left-4 z-10 bg-white shadow-md cursor-pointer
 `;
 
 const BackButton = tw.img`
-    h-12
+    h-full object-contain
 `;
 
 const Wrapper = tw.div`
