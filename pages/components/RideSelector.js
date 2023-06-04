@@ -1,26 +1,48 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import tw from 'tailwind-styled-components';
 import { carList } from '../data/carList';
 
-const RideSelector = () => {
-  return (
-    <Wrapper>
-        <Title>Choose a ride/Swipe up for more </Title>
-        <RideList>
-                { carList.map((car, index)=>(
-                    <Car key={index}>
-                        <CarImage src={car.imgUrl} />
-                        <CarDetails>
-                            <Service>{car.service}</Service>
-                            <Time>5 min away</Time>
-                        </CarDetails>
-                        <Price>$24.00</Price>
-                    </Car>
-                )) }
+const RideSelector = ({pickupCoordinates, dropOffCoordinates}) => {
 
-        </RideList>
-    </Wrapper>
-  )
+    const [rideDuration, setRideDuration] = useState(0);
+
+    // get ride duration from MAPBOX API
+    // 1. pickupCoordinates
+    // 2. dropoffCoordinates
+
+    useEffect(()=>{
+        const fetchData = async () => {
+            try {
+                const response = await fetch(
+                    `https://api.mapbox.com/directions/v5/mapbox/driving/${pickupCoordinates[0]},${pickupCoordinates[1]};${dropOffCoordinates[0]},${dropOffCoordinates[1]}?access_token=pk.eyJ1IjoiamFkYXNoaTk3IiwiYSI6ImNsaTRvODhidzE5dWQzZm8wcmFlc2VvdzkifQ.jfniAC-1WpN--O_DqmP8lA`
+                );
+                const data = await response.json();
+                setRideDuration(data.routes[0].duration / 100)
+            } catch (error) {
+                console.log(error);
+            }
+        }
+       fetchData();
+    }, [pickupCoordinates, dropOffCoordinates])
+
+    return (
+        <Wrapper>
+            <Title>Choose a ride/Swipe up for more </Title>
+            <RideList>
+                    { carList.map((car, index)=>(
+                        <Car key={index}>
+                            <CarImage src={car.imgUrl} />
+                            <CarDetails>
+                                <Service>{car.service}</Service>
+                                <Time>5 min away</Time>
+                            </CarDetails>
+                            <Price>{"$" + (rideDuration * car.multiplier).toFixed(2)}</Price>
+                        </Car>
+                    )) }
+
+            </RideList>
+        </Wrapper>
+    )
 }
 
 export default RideSelector;

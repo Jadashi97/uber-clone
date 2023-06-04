@@ -20,24 +20,20 @@ export default function Home(){
                     </Profile>
                 </Header>
                 <ActionButtons>
-                    <Link href={"/Search"}>
-                        <ActionButton>
-                            <ActionButtonImg src="https://i.ibb.co/cyvcpfF/uberx.png"/>
-                            Ride
-                        </ActionButton>
-                    </Link>
-                    <Link href={"/Search"}>
+                        <Link href="/Search">
+                            <ActionButton>
+                                <ActionButtonImg src="https://i.ibb.co/cyvcpfF/uberx.png"/>
+                                Ride
+                            </ActionButton>
+                        </Link>
                         <ActionButton>
                             <ActionButtonImg src="https://i.ibb.co/n776JLm/bike.png"/>
                             Wheels
                         </ActionButton>
-                    </Link>
-                    <Link href={"/Search"}>
                         <ActionButton>
                             <ActionButtonImg src="https://i.ibb.co/5RjchBg/uberschedule.png"/>
                             Reserve
                         </ActionButton>
-                    </Link>
                 </ActionButtons>
                 <InputButton>
                     Where to?
@@ -83,17 +79,17 @@ const UserImage = tw.img`
 `;
 
 const ActionButtons = tw.div`
-    flex items-center  justify-evenly
+    flex 
 `
 const ActionButton = tw.div`
-    flex  bg-gray-200 flex-1 m-1 h-32    flex-col justify-center rounded-lg transform hover:scale-105 transition text-xl
-`;
+flex bg-gray-200 flex-1 m-1 h-32 items-center flex-col justify-center rounded-lg transform hover:scale-105 transition text-xl
+`
 
 const ActionButtonImg = tw.img`
     h-3/5
 `;
 
 const InputButton = tw.div`
-    mt-8 flex bg-gray-200 h-20 text-2xl p-4 items-center
+    h-20 bg-gray-200 text-2xl p-4 flex items-center mt-8
 `;
 

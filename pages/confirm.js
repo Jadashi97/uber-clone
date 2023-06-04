@@ -12,8 +12,8 @@ const Confirm = () =>  {
 
     const {pickUp, dropOff} = router.query;
 
-    const [pickupCoordinates, setpickUpCoordinates] = useState();
-    const [dropOffCoordinates, setDropOffCoordinates] = useState();
+    const [pickupCoordinates, setpickUpCoordinates] = useState([0, 0]);
+    const [dropOffCoordinates, setDropOffCoordinates] = useState([0, 0]);
 
     async function getPickUpCoordinates(pickUp){
         // const pickUp = "Munuki Central";
@@ -63,7 +63,10 @@ const Confirm = () =>  {
                 dropOffCoordinates={dropOffCoordinates}
             />
             <RideContainer>
-                <RideSelector/>
+                <RideSelector
+                    pickupCoordinates = {pickupCoordinates}
+                    dropOffCoordinates = {dropOffCoordinates}
+                />
                 <ConfirmButtonContainer>
                     <ConfirmButton>
                         Comfirm UberX
