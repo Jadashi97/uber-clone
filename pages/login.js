@@ -20,7 +20,7 @@ export default Login;
 
 
 const Wrapper = tw.div`
-    flex h-screen flex-col bg-white
+    flex flex-col h-screen w-screen bg-gray-100 p-4
 `;
 
 const Uberlogo = tw.img`
@@ -28,13 +28,13 @@ const Uberlogo = tw.img`
 `;
 
 const Title = tw.div`
-    text-6xl text-center text-gray-500
+    text-5xl text-gray-500
 `;
 
 const HeadImg = tw.img`
-
+    object-contain w-full
 `;
 
 const LoginButton = tw.div`
-
+    bg-black text-white py-4 mt-8 text-center self-center w-full
 `;
