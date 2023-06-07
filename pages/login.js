@@ -13,7 +13,7 @@ const Login = () => {
                 router.push('/')
             }
         })
-    }, [])
+    }, [router])
 
     return (
         <Wrapper>
