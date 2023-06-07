@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import Map from "./components/Map";
+import Map from "../src/app/components/Map";
 import tw from 'tailwind-styled-components';
 import mapboxgl from '!mapbox-gl';
 import { useRouter } from 'next/router';
-import RideSelector from './components/RideSelector';
+import RideSelector from '../src/app/components/RideSelector';
 import Link from 'next/link';
 
 

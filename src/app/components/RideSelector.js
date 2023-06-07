@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import tw from 'tailwind-styled-components';
-import { carList } from '../../public/data/carList';
+import { carList } from '../../../public/data/carList';
 
 const RideSelector = ({pickupCoordinates, dropOffCoordinates}) => {
 
