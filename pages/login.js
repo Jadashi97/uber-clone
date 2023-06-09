@@ -8,9 +8,11 @@ const Login = () => {
     const router = useRouter();
 
     useEffect(()=> {
-        onAuthStateChanged(auth, user => {
+        onAuthStateChanged(auth, (user) => {
             if(user){
                 router.push('/')
+            }else{
+                console.log("locate user")
             }
         })
     }, [])
@@ -33,7 +35,7 @@ export default Login;
 
 
 const Wrapper = tw.div`
-    flex flex-col h-screen w-screen bg-white p-4
+    flex flex-col h-screen w-full md: w-auto bg-white p-4
 `;
 
 const YallaLogo = tw.img`

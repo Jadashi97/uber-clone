@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "../styles/globals.css";
-import Map from "../src/app/components/Map";
+import Map from "../components/Map";
 import tw from "tailwind-styled-components";
 import Link from "next/link";
 import { auth } from "../firebase";
