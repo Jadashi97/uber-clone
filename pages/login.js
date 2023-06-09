@@ -13,7 +13,7 @@ const Login = () => {
                 router.push('/')
             }
         })
-    }, [router])
+    }, [])
 
     return (
         <Wrapper>
@@ -22,7 +22,6 @@ const Login = () => {
                 Login to Access your YALLA account!
             </Title>
             <HeadImg src="https://cdn.pixabay.com/photo/2022/02/10/21/18/tricycle-7006191_640.jpg"/>
-            {/* <HeadImg src="https://i.ibb.co/CsV9RYZ/login-image.png"/> */}
             <LoginButton onClick={() => signInWithPopup(auth, provider)}>
                 Sign in with Google
             </LoginButton>
@@ -42,11 +41,11 @@ const YallaLogo = tw.img`
 `;
 
 const Title = tw.div`
-    text-5xl text-gray-500 p-10
+    text-4xl text-gray-500 p-10
 `;
 
 const HeadImg = tw.img`
-    object-contain w-full blur-sm hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-500
+    object-contain w-full blur-sm transition ease-in-out delay-150 transform hover:scale-105 hover:scale-110 hover:blur-none
 `;
 
 const LoginButton = tw.div`

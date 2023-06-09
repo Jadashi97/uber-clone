@@ -25,7 +25,7 @@ export default function Home(){
                 router.push('/login')
             }
         })
-    }, [router])
+    }, [])
 
     return (
         <Wrapper>
@@ -45,20 +45,22 @@ export default function Home(){
                 </Header>
                 <ActionButtons>
                         <ActionButton>
-                            <Link href="">
-                                <ActionButtonImg src="https://i.ibb.co/n776JLm/bike.png"/>
-                                Wheels
+                            <Link href="/Search">
+                                <ActionButtonImg src="https://cdn.pixabay.com/photo/2023/04/10/17/33/motorbike-7914313_640.png"/>
                             </Link>
+                                Boda Boda
                             </ActionButton>
                         <ActionButton>
                                 <Link href="/Search">
                                     <ActionButtonImg src="https://cdn.pixabay.com/photo/2016/03/31/21/15/rickshaw-1296278_640.png"/>
                                 </Link>
-                                    Ride
+                                   Ricksha
                         </ActionButton>
                 </ActionButtons>
                 <InputButton>
-                    Where to?
+                    <Link href={"/Search"}>
+                        Where to?
+                    </Link>
                 </InputButton>
                 {/* Buttons */}
                 {/* InputButton */}
@@ -73,6 +75,9 @@ const Wrapper = tw.div`
 
 `;
 
+const Input = tw.div`
+
+`
 
 const ActionItems = tw.div`
     flex-1 p-4
@@ -104,14 +109,14 @@ const ActionButtons = tw.div`
     flex m-1 p-1
 `
 const ActionButton = tw.div`
-flex bg-gray-200 flex-1 m-1 h-32 items-center flex-col justify-center rounded-lg transform hover:scale-105 transition text-xl
+flex bg-gray-100 flex-1 m-2 h-36 items-center flex-col justify-center rounded-lg transform hover:scale-105 transition text-xl
 `
 
 const ActionButtonImg = tw.img`
-    h-3/5 h-28
+    h-3/5 h-28 mb-2
 `;
 
 const InputButton = tw.div`
-    h-20 bg-gray-200 text-2xl p-4 flex items-center mt-8
+    h-20 bg-gray-200 text-2xl p-4 flex item-center justify-center mt-8
 `;
 
