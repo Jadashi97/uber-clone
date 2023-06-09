@@ -33,7 +33,8 @@ export default function Home(){
             <ActionItems>
                 {/* header */}
                 <Header>
-                    <UberLogo src="https://i.ibb.co/84stgjq/uber-technologies-new-20218114.jpg"/>
+                    {/* <UberLogo src="https://i.ibb.co/84stgjq/uber-technologies-new-20218114.jpg"/> */}
+                    <YallaLogo src="https://cdn.pixabay.com/photo/2016/12/01/09/04/tuk-tuk-1874740_640.jpg"/>
                     <Profile>
                         <Name>{user && user.name}</Name>
                         <UserImage 
@@ -43,19 +44,17 @@ export default function Home(){
                     </Profile>
                 </Header>
                 <ActionButtons>
-                        <Link href="/Search">
-                            <ActionButton>
-                                <ActionButtonImg src="https://i.ibb.co/cyvcpfF/uberx.png"/>
-                                Ride
+                        <ActionButton>
+                            <Link href="">
+                                <ActionButtonImg src="https://i.ibb.co/n776JLm/bike.png"/>
+                                Wheels
+                            </Link>
                             </ActionButton>
-                        </Link>
                         <ActionButton>
-                            <ActionButtonImg src="https://i.ibb.co/n776JLm/bike.png"/>
-                            Wheels
-                        </ActionButton>
-                        <ActionButton>
-                            <ActionButtonImg src="https://i.ibb.co/5RjchBg/uberschedule.png"/>
-                            Reserve
+                                <Link href="/Search">
+                                    <ActionButtonImg src="https://cdn.pixabay.com/photo/2016/03/31/21/15/rickshaw-1296278_640.png"/>
+                                </Link>
+                                    Ride
                         </ActionButton>
                 </ActionButtons>
                 <InputButton>
@@ -70,7 +69,7 @@ export default function Home(){
 };
 
 const Wrapper = tw.div`
-    flex flex-col h-screen
+    flex flex-col h-screen bg-white
 
 `;
 
@@ -81,10 +80,10 @@ const ActionItems = tw.div`
 `;
 
 const Header = tw.div`
-    flex justify-between items-center
+    flex justify-between items-center p-2
 `;
 
-const UberLogo = tw.img`
+const YallaLogo = tw.img`
     h-28
 
 `;
@@ -102,14 +101,14 @@ const UserImage = tw.img`
 `;
 
 const ActionButtons = tw.div`
-    flex 
+    flex m-1 p-1
 `
 const ActionButton = tw.div`
 flex bg-gray-200 flex-1 m-1 h-32 items-center flex-col justify-center rounded-lg transform hover:scale-105 transition text-xl
 `
 
 const ActionButtonImg = tw.img`
-    h-3/5
+    h-3/5 h-28
 `;
 
 const InputButton = tw.div`
