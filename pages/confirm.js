@@ -69,7 +69,7 @@ const Confirm = () =>  {
                 />
                 <ConfirmButtonContainer>
                     <ConfirmButton>
-                        Comfirm UberX
+                        Comfirm Ride
                     </ConfirmButton>
                 </ConfirmButtonContainer>
             </RideContainer>
@@ -93,7 +93,7 @@ const Wrapper = tw.div`
 `;
 
 const RideContainer = tw.div`
-    flex-1 flex flex-col h-1/2
+    flex-1 flex flex-col h-1/2 bg-white
 `;
 
 const ConfirmButtonContainer = tw.div`

@@ -17,7 +17,7 @@ const RideSelector = ({pickupCoordinates, dropOffCoordinates}) => {
                     `https://api.mapbox.com/directions/v5/mapbox/driving/${pickupCoordinates[0]},${pickupCoordinates[1]};${dropOffCoordinates[0]},${dropOffCoordinates[1]}?access_token=pk.eyJ1IjoiamFkYXNoaTk3IiwiYSI6ImNsaTRvODhidzE5dWQzZm8wcmFlc2VvdzkifQ.jfniAC-1WpN--O_DqmP8lA`
                 );
                 const data = await response.json();
-                setRideDuration(data.routes[0].duration / 100)
+                setRideDuration(data.routes[0].duration / 1.5)
             } catch (error) {
                 console.log(error);
             }
@@ -36,7 +36,7 @@ const RideSelector = ({pickupCoordinates, dropOffCoordinates}) => {
                                 <Service>{car.service}</Service>
                                 <Time>5 min away</Time>
                             </CarDetails>
-                            <Price>{"$" + (rideDuration * car.multiplier).toFixed(2)}</Price>
+                            <Price>{"SSP " + (rideDuration * car.multiplier).toFixed(2)}</Price>
                         </Car>
                     )) }
 
@@ -66,7 +66,7 @@ overflow-y-scroll
 `;
 
 const CarImage = tw.img`
-    h-28 mr-4
+    h-28 mr-6
 `;
 
 const CarDetails = tw.div`

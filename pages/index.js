@@ -54,7 +54,7 @@ export default function Home(){
                                 <Link href="/Search">
                                     <ActionButtonImg src="https://cdn.pixabay.com/photo/2016/03/31/21/15/rickshaw-1296278_640.png"/>
                                 </Link>
-                                   Ricksha
+                                   Raksha
                         </ActionButton>
                 </ActionButtons>
                 <InputButton>
