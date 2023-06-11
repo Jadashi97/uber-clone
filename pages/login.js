@@ -33,15 +33,18 @@ const Login = () => {
                 />
             </HeaderContainer>
             <Description>
-                Why wait ? Order & Ride with us!
+                Why wait ? Order & Ride with us!👇🏾
+                <HeadImg src="https://cdn.pixabay.com/photo/2021/01/25/08/05/tuk-tuk-5947585_1280.jpg"/>
             </Description>
             <Title>
                 Login to Access your YA-LA account!
+                <LoginButton onClick={() => signInWithPopup(auth, provider)}>
+                    Sign In with Google
+                </LoginButton>
             </Title>
-            <HeadImg src="https://cdn.pixabay.com/photo/2021/01/25/08/05/tuk-tuk-5947585_1280.jpg"/>
-            <LoginButton onClick={() => signInWithPopup(auth, provider)}>
-                Sign in with Google
-            </LoginButton>
+            <Footer>
+                Jadashi97/lokose • © 2023 || All Rights Reserved
+            </Footer>
         </Wrapper>
     )
 }
@@ -58,18 +61,18 @@ const HeaderContainer = tw.div`
 `;
 
 const YallaLogo = tw.img`
-    h-32 ml-6 object-contain  self-start w-auto bg-white transform hover:scale-105
+    h-32 ml-2 object-contain  self-start w-auto bg-white transform hover:scale-105
 `;
 
 const YallaLogo2 = tw.img`
-    h-28 mr-6 object-contain  self-end w-auto bg-white transform hover:scale-105
+    h-28 mr-2 object-contain  self-end w-auto bg-white transform hover:scale-105
 `;
 
 const CompanyName = tw.div`
-    text-6xl text-black p-4 mt-8 text-center bg-gradient-to-r from-purple-400 md:from-yellow-500
+    text-4xl text-black p-4 mt-8 text-center bg-gradient-to-r from-purple-400 md:from-yellow-500
 `;
 const Title = tw.div`
-    text-3xl text-gray-500 p-8 text-center mb-8
+    text-2xl text-gray-500 p-8 text-center mb-8
 `;
 
 const Description = tw.div`
@@ -77,9 +80,13 @@ const Description = tw.div`
 `;
 
 const HeadImg = tw.img`
-    object-contain w-full blur-sm transition ease-in-out delay-100 hover:scale-105 hover:blur-none
+    object-contain w-full pt-6 blur-sm transition ease-in-out delay-100 hover:scale-105 hover:blur-none
 `;
 
 const LoginButton = tw.div`
-    bg-black text-white p-4 m-8 text-center self-center w-full cursor-pointer
+    bg-black text-white rounded-full p-4 m-8 text-center self-center w-half h-20 cursor-pointer
 `;
+
+const Footer = tw.div`
+    w-full bg-black text-white text-center self-center
+`
